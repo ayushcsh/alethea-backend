@@ -22,6 +22,7 @@
     "@langchain/qdrant": "^0.1.2",
     "@types/node": "^24.2.0",
     "bullmq": "^5.56.9",
+    "cors": "^2.8.5",
     "install": "^0.13.0",
     "langchain": "^0.3.30",
     "multer": "^2.0.2"
