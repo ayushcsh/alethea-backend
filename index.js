@@ -359,7 +359,24 @@ context:${JSON.stringify(result)}
 
 })
 
-const PORT = process.env.PORT || 8000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+const DEFAULT_PORT = Number(process.env.PORT) || 8000;
+
+function startServer(startPort) {
+  const portToUse = Number(startPort);
+  const server = app.listen(portToUse, () => {
+    console.log(`Server is running on port ${portToUse}`);
+  });
+
+  server.on('error', (err) => {
+    if (err && err.code === 'EADDRINUSE') {
+      const nextPort = portToUse + 1;
+      console.warn(`Port ${portToUse} in use, retrying on ${nextPort}...`);
+      startServer(nextPort);
+    } else {
+      console.error('Failed to start server:', err);
+      process.exit(1);
+    }
+  });
+}
+
+startServer(DEFAULT_PORT);
