@@ -4,13 +4,8 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-<<<<<<< HEAD
-   "start": "node index.js",
-  "start:worker": "node worker.js",
-=======
   "start": "node index.js",       
   "start:worker": "node worker.js", 
->>>>>>> 980f901 (Fix CORS import and update dependencies)
   "dev": "node --watch index.js",
   "dev:worker": "node --watch worker.js"
   },
