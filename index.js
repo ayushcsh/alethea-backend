@@ -66,8 +66,7 @@ const genAI = new GoogleGenerativeAI(process.env.API_KEY);
 
 const queue = new Queue("file-upload-queue", {
   connection: {
-    host: process.env.REDIS_HOST || '127.0.0.1',
-    port: process.env.REDIS_PORT || 6379,
+    url: process.env.REDIS_URL || 'redis://127.0.0.1:6379',
   }
 });
 
