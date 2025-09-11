@@ -2,6 +2,8 @@ import express from 'express';
 import cors from 'cors';
 import multer from 'multer';
 import fs from 'fs';
+import './worker.js';  // just import it so the Worker starts
+
 // Using dynamic import to avoid test file issues
 let PdfParse;
 (async () => {

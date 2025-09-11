@@ -1,9 +1,9 @@
-  import { Worker } from 'bullmq';
-  import { GoogleGenerativeAIEmbeddings } from "@langchain/google-genai";
-  import { QdrantVectorStore } from "@langchain/qdrant";
-  import { Document } from "@langchain/core/documents";
-  import { PDFLoader } from "@langchain/community/document_loaders/fs/pdf";
- import dotenv from "dotenv";
+import { Worker } from 'bullmq';
+import { GoogleGenerativeAIEmbeddings } from "@langchain/google-genai";
+import { QdrantVectorStore } from "@langchain/qdrant";
+import { Document } from "@langchain/core/documents";
+import { PDFLoader } from "@langchain/community/document_loaders/fs/pdf";
+import dotenv from "dotenv";
 dotenv.config();
 
 
